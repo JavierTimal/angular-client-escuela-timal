@@ -1,0 +1,32 @@
+<div class="container">
+    <br>
+    <a [routerLink]="['/alumnos/detalle', idAlum]" class="btn btn-xs btn-success">Regresar</a>
+    
+    <h1 class="text-center">
+        Actualizacion de Calificacion
+    </h1>
+    <div class="row">
+        <div class="col-12">
+            
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>ID: </strong>{{calificacion.id + ""}} </li>
+                    <li class="list-group-item"><strong>Alumno: </strong>{{calificacion.alumno}}</li>
+                    <li class="list-group-item"><strong>Materia: </strong>{{calificacion.materia}}</li>
+                    <li class="list-group-item"><strong>Calificacion: </strong>{{calificacion.calificacion}}</li>
+                    <li class="list-group-item"><strong>Nueva Calificacion: </strong><input type="text" class="form-control" #calif></li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <button class="btn btn-primary btn-xs" (click)="actualizarCalificacion()">
+            Guardar
+        </button>
+    </div>
+
+    
+</div>

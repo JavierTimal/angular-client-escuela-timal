@@ -1,0 +1,58 @@
+<div class="container">
+    <br>
+    <a [routerLink]="['/alumnos/listado']" class="btn btn-xs btn-success">Regresar</a>
+    <h1 class="text-center">
+        Detalle de Alumno {{id}}
+    </h1>
+
+    <div class="row">
+        <div class="col-12">
+            
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>ID: </strong>{{alumno.id}}</li>
+                    <li class="list-group-item"><strong>Nombre: </strong>{{alumno.nombre}}</li>
+                    <li class="list-group-item"><strong>Ap. Paterno: </strong>{{alumno.ap_paterno}}</li>
+                    <li class="list-group-item"><strong>Ap. Materno: </strong>{{alumno.ap_materno}}</li>
+                    <li class="list-group-item"><strong>Activo: </strong>{{alumno.activo}}</li>
+                    <li class="list-group-item"><strong>PROMEDIO: </strong>{{alumno.promedio}}</li>
+                    <li class="list-group-item"><a [routerLink]="['/alumnos/calificacion/alta', alumno.id]" class="btn btn-xs btn-warning" style="color: white;">Alta Calificacion</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <h5 class="text-center">
+        Calificaciones
+    </h5>
+    <br>
+    
+    <div class="row">
+        <table class="table table-bordered" width="100%" cellSpacing="0">
+            <thead>
+                <th scope="col">Id</th>
+                <th scope="col">Materia</th>
+                <th scope="col">Calificacion</th>
+                <th scope="col">Fecha Registro</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let materia of alumno.materias">
+                    <td>{{materia.id}}</td>
+                    <td>{{materia.materia}}</td>
+                    <td>{{materia.calificacion}}</td>
+                    <td>{{materia.fechaRegistro}}</td>
+                    <td>
+                        <a [routerLink]="['/alumnos/calificacion/editar', materia.idReg, alumno.id, materia.id]" class="btn btn-xs btn-primary">Editar</a>
+                    </td>
+                    <td>
+                        <button (click)="eliminarCalificacion(materia.idReg)" class="btn btn-xs btn-danger">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

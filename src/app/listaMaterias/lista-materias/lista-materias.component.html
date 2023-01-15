@@ -1,0 +1,29 @@
+<div class="container">
+    <h1 class="text-center">
+        Listado de Materias
+    </h1>
+
+    <table class="table table-bordered" width="100%" cellSpacing="0">
+        <thead>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Activo</th>
+            <th scope="col"></th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let materia of materias">
+                <td>{{materia.id}}</td>
+                <td>{{materia.nombre}}</td>
+                <td>{{materia.activo}}</td>
+                <!-- <td>
+                    <a [routerLink]="['/alumnos/detalle', alumno.id]" class="btn btn-xs btn-success">Detalle</a>
+                </td> -->
+                <!-- <td><button (click)="editar(alumno.id)" class="btn btn-xs btn-primary">Editar</button></td> -->
+                <td><button (click)="eliminar(materia.id)" class="btn btn-xs btn-danger">Eliminar</button></td>
+
+                <!-- <td>
+                    <a [routerLink]="['/alumnos/calificacion/alta', alumno.id]" class="btn btn-xs btn-warning" style="color: white;">Generar Reporte</a></td> -->
+            </tr>
+        </tbody>
+    </table>
+</div>

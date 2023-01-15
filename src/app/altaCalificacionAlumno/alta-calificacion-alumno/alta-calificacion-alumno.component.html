@@ -1,0 +1,38 @@
+<div class="container">
+    <br>
+    <a [routerLink]="['/alumnos/detalle',idAlum ]" class="btn btn-xs btn-success">Regresar</a>
+    <br>
+    <br>
+    <h1 class="text-center">
+        Alta de Calificacion para el Alumno {{idAlum}}
+    </h1>
+    <div class="row">
+        <div class="col-12">
+            
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>ID: </strong>{{alumno.id}} </li>
+                    <li class="list-group-item"><strong>Alumno: </strong>{{alumno.nombre + " " + alumno.ap_paterno + " " + alumno.ap_materno}}</li>
+                    <li class="list-group-item"><strong>Materia: </strong><select class="form-control" #materia>
+                        <option *ngFor="let materia of materias" [value]="materia.id">
+                            {{materia.nombre}}
+                          </option>
+                      </select>
+                    </li>
+                    <!-- <li class="list-group-item"><strong>Calificacion: </strong>{{calificacion.calificacion}}</li> -->
+                    <li class="list-group-item"><strong>Calificacion: </strong><input type="text" class="form-control" #calif></li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <button class="btn btn-primary btn-xs" (click)="altaCalificacion()">
+            Guardar
+        </button>
+    </div>
+
+    
+</div>
